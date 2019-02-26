@@ -27,7 +27,7 @@ public class App
         syncCommands.set("key", "Hello, Raj");
         String v = syncCommands.get("key");
 
-        System.out.println(v);
+        System.out.println("Raj..."+v);
 
         System.out.println(connection.async().clientList());
        // connection.async().command().
