@@ -17,8 +17,9 @@ public class App
 {
     public static void main( String[] args )
     {
-    	   
-        RedisClient redisClient = RedisClient.create("rediss://VxjYJqZ8WUsS781lhwBv9ZKNJGoLFgOEBIV6+LbcSTg=@rajakula.redis.cache.windows.net:6380/0");
+    	   //Using Lettuce client
+    	//Connection string  - rediss://password@DNS or IP:port/0
+        RedisClient redisClient = RedisClient.create("Connection String");
 
         StatefulRedisConnection<String, String> connection = redisClient.connect();
         System.out.println("Connected to Redis using SSL");
@@ -36,11 +37,11 @@ public class App
         
     	/* Jedis code
     	boolean useSSL=true;
-    	JedisShardInfo sInfo = new JedisShardInfo("rajakula.redis.cache.windows.net",6380,useSSL);
-    	sInfo.setPassword("VxjYJqZ8WUsS781lhwBv9ZKNJGoLFgOEBIV6+LbcSTg=");
+    	JedisShardInfo sInfo = new JedisShardInfo("XXXX",6380,useSSL);
+    	sInfo.setPassword("password");
     	//boolean useSSL=false;
-    	//JedisShardInfo sInfo = new JedisShardInfo("13.77.162.83",6379,useSSL);
-    	//JedisShardInfo sInfo = new JedisShardInfo("rakula@redisraj.westus2.cloudapp.azure.com",6379,useSSL);
+    	//JedisShardInfo sInfo = new JedisShardInfo("iP address",6379,useSSL);
+    	//JedisShardInfo sInfo = new JedisShardInfo("azure URL",6379,useSSL);
     	
     	//sInfo.setPassword("marpally@321");
     	Jedis jedis = new Jedis(sInfo);
